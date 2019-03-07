@@ -4,7 +4,7 @@
       <img class="card-img-top" :src="image" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{name}}</h5>
-        <p class="card-text">{{description}}</p>
+        <p class="card-text text-justify">{{description}}</p>
         <a href="#" class="btn btn-primary">{{labelButton}}</a>
       </div>
     </div>
@@ -32,8 +32,7 @@
 <style scoped lang="scss">
   .card-project {
     .card img.card-img-top{
-      min-height: 100px;
-      max-height: 200px;
+      height: 200px;
     }
   }
 </style>

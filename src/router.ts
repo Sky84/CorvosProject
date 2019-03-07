@@ -11,5 +11,9 @@ export default new Router({
       name: 'home',
       component: HomePage,
     },
+    {
+      path: '/contact',
+      name: 'contact'
+    },
   ],
 });

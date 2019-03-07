@@ -2,7 +2,7 @@
   <div id="app" class="container-fluid">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/contact">Contact</router-link>
     </div>
     <router-view/>
   </div>
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import './styles/site.scss';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

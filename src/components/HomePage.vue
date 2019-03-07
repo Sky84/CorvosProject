@@ -1,18 +1,35 @@
 <template>
   <section class="home-page">
-    <transition name="slide-fade">
-      <div class="row">
-        <card-project
-          class="col-md-3 offset-md-2 mb-5"
-          v-for="project in projects"
-          :key="project.name"
-          :name="project.name"
-          :description="project.description"
-          :image="project.image"
-          :labelButton="project.labelButton"
-        ></card-project>
+    <div class="row mb-5">
+      <div class="col-md-6 offset-md-3">
+        <div class="flip-box">
+          <div class="flip-box-inner">
+            <div class="flip-box-front">
+              <img class="d-block w-100 logo" src="../assets/logo.png">
+            </div>
+            <div class="flip-box-back back-presentation">
+              <span class="align-middle">
+                <h2>Etienne Salupo-Corvo</h2>
+                <p>J'aime et je suis passionné de CRÉATION de jeux-vidéo. <br>
+                  L'objectif 2019 est l'auto entreprenariat puis de maîtriser le langage C# en ce qui concerne les jeux-vidéo et ses concepts.</p>
+                <p>N'hésitez pas à tester certains des projets plus bas.</p>
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
-    </transition>
+    </div>
+    <div class="row offset-md-1">
+      <card-project
+        class="col-md-4 offset-md-1 mb-5"
+        v-for="project in projects"
+        :key="project.name"
+        :name="project.name"
+        :description="project.description"
+        :image="project.image"
+        :labelButton="project.labelButton"
+      ></card-project>
+    </div>
   </section>
 </template>
 
@@ -26,8 +43,15 @@ export default {
     return {
         projects: [
             {
+                name: 'Pizza Coon Quest',
+                description: 'Jeu de type Runner ou le joueur doit aller le plus loin possible en récoltant le plus d\'aliments mais attention aux mauvais aliments !. Réalisé avec Unity 3D/ C#',
+                image: 'https://i.imgur.com/YHAB93k.jpg',
+                labelButton: 'Tester (Bientôt)',
+                linkButton: ''
+            },
+            {
                 name: 'Hard Runner Color',
-                description: 'Jeu de plateforme ou le joueur doit aller le plus loin possible en sautant pour faire tourner et correspondre avec les bonnes couleurs. Réalisé avec Unity 3D/ C#',
+                description: 'Jeu de type Runner ou le joueur doit aller le plus loin possible en sautant pour faire tourner et correspondre avec les bonnes couleurs. Réalisé avec Unity 3D/ C#',
                 image: 'https://lh3.googleusercontent.com/6UpaXMHYPlORt7zC3tyrngl6ZN0LKH5qmtXO99Fl5nTKH_rZsIR4fYZ42DhEuwut9sL4=w720-h310',
                 labelButton: 'Tester sur le Play Store',
                 linkButton: 'https://play.google.com/store/apps/details?id=com.CorvosProject.HardRunnerColor'
@@ -58,16 +82,13 @@ export default {
 
 <style scoped lang="scss">
 .home-page {
-    .slide-fade-enter-active {
-      transition: all .3s ease;
-    }
-    .slide-fade-leave-active {
-      transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-    }
-    .slide-fade-enter, .slide-fade-leave-to
-    /* .slide-fade-leave-active below version 2.1.8 */ {
-      transform: translateX(10px);
-      opacity: 0;
-    }
+  img.logo{
+    height: 80vh;
+  }
+  .back-presentation{
+    top:25vh;
+    border-radius: 10px;
+    height: unset !important;
+  }
 }
 </style>
